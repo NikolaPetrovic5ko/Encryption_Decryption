@@ -8,15 +8,32 @@ void decryption(char *message);
 int main()
 {
     char message[100];
+    int choice;
 
-      printf("====Enter message for encryption====\n");
-      printf("NOTE: First letter must be 'a', than comes white space\nand than you enter your message\nMESSAGE: ");
-      gets(message);
-      encryption(&message[0]);
-      getchar();
-      printf("====Enter message for decryption====\nMESSAGE: ");
-      gets(message);
-      decryption(&message[0]);
+    printf("If you want to encrypt message, press 1.\nIf you want to decrypt message, press 2.\n");
+    printf("When you do not want to use application anymore, just press 0.\n");
+    while(choice != 0){
+        printf("\nCHOICE: ");
+        scanf("%d", &choice); /*The problem was that the newline I input when reading choice
+                                was being taken as input for the next gets(message),
+                                and so it was reading an empty string. Because of that I added an artificial
+                                getchar after scanf to absorb the newline.*/
+        getchar();
+        switch(choice){
+            case 1:
+                printf("\n====Enter message for encryption====\n");
+                printf("\nNOTE: First letter must be 'a', than comes white space\nand than you enter your message\n\nMESSAGE: ");
+                gets(message);
+                encryption(&message[0]);
+                break;
+            case 2:
+                printf("\n====Enter message for decryption====\n\nMESSAGE: ");
+                gets(message);
+                decryption(&message[0]);
+                break;
+            default: printf("\nGOODBYE.\n");
+        }
+    }
 
     return 0;
 }
@@ -48,7 +65,7 @@ void encryption(char *message){
     char *ptrMessage = message;
     char *encrypted_msg = encrypted_message;
 
-    printf("\n===Input a letter for encryption.===\nLetter must be from the second row of the keyboard.\nLETTER: ");
+    printf("\n===Input a letter for encryption===\n\nLetter must be from the second row of the keyboard.\n\nLETTER: ");
     scanf("%c",&letter_for_encryption);
     while( row2_of_letters[distance] != letter_for_encryption ){
         distance = distance + 1;
@@ -102,7 +119,7 @@ void encryption(char *message){
             }
         }
     }
-    printf("=====ENCRYPTED MESSAGE=====\n%s\n", encrypted_message);
+    printf("\n=====ENCRYPTED MESSAGE=====\n\n%s\n", encrypted_message);
 }
 
 void decryption(char *message){
@@ -186,5 +203,5 @@ void decryption(char *message){
             }
         }
     }
-    printf("=====DECRYPTED MESSAGE=====\n%s\n", decrypted_message);
+    printf("\n=====DECRYPTED MESSAGE=====\n\n%s\n", decrypted_message);
 }
