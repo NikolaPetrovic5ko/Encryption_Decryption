@@ -1,7 +1,7 @@
 /**
 * @author Nikola Petrovic
 * @file main.c
-* @bugs No bugs
+* @bug No bugs
 * @mainpage Encryption & Decryption program
 * @section This program encrypt & decrypt the given messages
 */
