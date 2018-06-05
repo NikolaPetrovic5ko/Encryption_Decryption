@@ -2,6 +2,12 @@
 #include <string.h>
 #include "encr_decr.h"
 
+/*!
+*  @brief This funtion encrypt the message given by user
+*  @author Nikola Petrovic
+*  @param *message We are getting the message added by user from this parameter
+*/
+
 void decryption(char *message){
 
     char decrypted_message[100] = "";
@@ -40,6 +46,7 @@ void decryption(char *message){
         for(iterator2 = 0; iterator2 < n1; iterator2++){
             if(*(ptrMessage + iterator1) == *(row1 + iterator2)){
                 if( (iterator2 - distance) < 0 ) {
+                    /// Napisi ovde nesto o ovom dole
                     char_position = n1 - (distance - iterator2);
                     *(decrypted_msg + iterator1) = *(row1 + char_position);
                     is_char_found = 1;
