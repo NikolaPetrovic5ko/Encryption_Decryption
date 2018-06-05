@@ -2,9 +2,9 @@
 #include <string.h>
 #include "encr_decr.h"
 
-void encryption(char *message){
+void decryption(char *message){
 
-    char encrypted_message[100] = "";
+    char decrypted_message[100] = "";
 
     int n1 = 10;
     int n2 = 9;
@@ -21,67 +21,68 @@ void encryption(char *message){
     int distance;
     int length_of_message = strlen(message);
 
-    char letter_for_encryption;
+    char letter_for_decryption;
 
     char *row1 = row1_of_letters;
     char *row2 = row2_of_letters;
     char *row3 = row3_of_letters;
     char *ptrMessage = message;
-    char *encrypted_msg = encrypted_message;
+    char *decrypted_msg = decrypted_message;
 
-    printf("\n===Input a letter for encryption.===\nLetter must be from the second row of the keyboard.\nLETTER: ");
-    scanf("%c",&letter_for_encryption);
-    while( row2_of_letters[distance] != letter_for_encryption ){
+    letter_for_decryption = *ptrMessage;
+    while( row2_of_letters[distance] != letter_for_decryption ){
         distance = distance + 1;
     }
+
     for(iterator1 = 0; iterator1 < length_of_message; iterator1++){
-    ///Encryption with first row
+    ///Decryption with first row
         is_char_found = 0;
         for(iterator2 = 0; iterator2 < n1; iterator2++){
             if(*(ptrMessage + iterator1) == *(row1 + iterator2)){
-                if( (iterator2 + distance) >= n1 ) {
-                    char_position = (iterator2 + distance) - n1;
-                    *(encrypted_msg + iterator1) = *(row1 + char_position);
+                if( (iterator2 - distance) < 0 ) {
+                    char_position = n1 - (distance - iterator2);
+                    *(decrypted_msg + iterator1) = *(row1 + char_position);
                     is_char_found = 1;
                 } else {
-                    *(encrypted_msg + iterator1) = *(row1 + iterator2 + distance);
+                    *(decrypted_msg + iterator1) = *(row1 + iterator2 - distance);
                     is_char_found = 1;
                 }
             }
         }
-    ///Encryption with second row
+    ///Decryption with second row
         if(is_char_found == 0) {
             for(iterator2 = 0; iterator2 < n2; iterator2++){
             if(*(ptrMessage + iterator1) == *(row2 + iterator2)){
-                if( (iterator2 + distance) >= n2 ) {
-                    char_position = (iterator2 + distance) - n2;
-                    *(encrypted_msg + iterator1) = *(row2 + char_position);
+                if( (iterator2 - distance) < 0 ) {
+                    char_position = n2 - (distance - iterator2);
+                    *(decrypted_msg + iterator1) = *(row2 + char_position);
                     is_char_found = 1;
                 } else {
-                    *(encrypted_msg + iterator1) = *(row2 + iterator2 + distance);
+                    *(decrypted_msg + iterator1) = *(row2 + iterator2 - distance);
                     is_char_found = 1;
                 }
             }
         }
-    ///Encryption with third row
+    ///Decryption with third row
         if(is_char_found == 0) {
                 for(iterator2 = 0; iterator2 < n3; iterator2++){
             if(*(ptrMessage + iterator1) == *(row3 + iterator2)){
-                if( (iterator2 + distance) >= n3 ) {
-                    char_position = (iterator2 + distance) - n3;
-                    *(encrypted_msg + iterator1) = *(row3 + char_position);
+                if( (iterator2 - distance) < 0 ) {
+                    char_position = n3 - (distance - iterator2);
+                    *(decrypted_msg + iterator1) = *(row3 + char_position);
                     is_char_found = 1;
                 } else {
-                    *(encrypted_msg + iterator1) = *(row3 + iterator2 + distance);
+                    *(decrypted_msg + iterator1) = *(row3 + iterator2 - distance);
                     is_char_found = 1;
                 }
             }
         }
         if(is_char_found == 0) {
-            *(encrypted_msg + iterator1) = *(ptrMessage + iterator1);
+            *(decrypted_msg + iterator1) = *(ptrMessage + iterator1);
                 }
             }
         }
     }
-    printf("=====ENCRYPTED MESSAGE=====\n%s\n", encrypted_message);
+    printf("\n=====DECRYPTED MESSAGE=====\n\n%s\n", decrypted_message);
 }
+
