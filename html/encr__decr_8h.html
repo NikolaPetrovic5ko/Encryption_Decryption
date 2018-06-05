@@ -73,9 +73,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a7536b12e4a35cfe7d847473fa62efffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encr__decr_8h.html#a7536b12e4a35cfe7d847473fa62efffe">encryption</a> (char *message)</td></tr>
+<tr class="memdesc:a7536b12e4a35cfe7d847473fa62efffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions prototypes are declared in this header file.  <a href="#a7536b12e4a35cfe7d847473fa62efffe">More...</a><br /></td></tr>
 <tr class="separator:a7536b12e4a35cfe7d847473fa62efffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88893bd527477a4bbb05d7fab5c84c37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encr__decr_8h.html#a88893bd527477a4bbb05d7fab5c84c37">decryption</a> (char *message)</td></tr>
-<tr class="memdesc:a88893bd527477a4bbb05d7fab5c84c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">This funtion encrypt the message given by user.  <a href="#a88893bd527477a4bbb05d7fab5c84c37">More...</a><br /></td></tr>
+<tr class="memdesc:a88893bd527477a4bbb05d7fab5c84c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function decrypt the message given by user.  <a href="#a88893bd527477a4bbb05d7fab5c84c37">More...</a><br /></td></tr>
 <tr class="separator:a88893bd527477a4bbb05d7fab5c84c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -95,7 +96,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This funtion encrypt the message given by user. </p>
+<p>This function decrypt the message given by user. </p>
 <dl class="section author"><dt>Author</dt><dd>Nikola Petrovic </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -103,10 +104,34 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>This represent an empty string where we are going to put our decrypted message.</p>
+<p>Number of characters in a row. Row is given by number next to 'n'.</p>
+<p>Arrays of characters which are located in a given row.</p>
+<p>Getting a length of message.</p>
+<p>Shows the position of letter 'a' in decrypted message.</p>
+<p>Pointers to given arrays and strings.</p>
+<p>Letter for decryption is a first letter of a given message.</p>
+<p>Calculate the distance between 'a' and letter for decryption.</p>
+<p>Starting from the first character of message.</p>
 <p>Decryption with first row</p>
-<p>Napisi ovde nesto o ovom dole</p>
+<p>Starting from the first character of the first row.</p>
+<p><b>Creating a circular moving for first row</b></p>
+<p>If position of a character is smaller than the number of characters in a row, position of a that character is calculated with this formula.</p>
+<p>In position of character of a given message insert decrypted character.</p>
+<p>If position of a character is not smaller than the number of characters in a row, inserting of decrypted character is proceed like this.</p>
 <p>Decryption with second row</p>
-<p>Decryption with third row </p>
+<p>Starting from the first character of the second row.</p>
+<p><b>Creating a circular moving for second row</b></p>
+<p>If position of a character is smaller than the number of characters in a row, position of a that character is calculated with this formula.</p>
+<p>In position of character of a given message insert decrypted character.</p>
+<p>If position of a character is not smaller than the number of characters in a row, inserting of decrypted character is proceed like this.</p>
+<p>Decryption with third row</p>
+<p>Starting from the first character of the third row.</p>
+<p><b>Creating a circular moving for third row</b></p>
+<p>If position of a character is smaller than the number of characters in a row, position of a that character is calculated with this formula.</p>
+<p>In position of character of a given message insert decrypted character.</p>
+<p>If position of a character is not smaller than the number of characters in a row, inserting of decrypted character is proceed like this.</p>
+<p>If character is not found in any of given rows, just insert a character from a given message. </p>
 
 </div>
 </div>
@@ -125,9 +150,50 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Functions prototypes are declared in this header file. </p>
+<dl class="section author"><dt>Author</dt><dd>Nikola Petrovic </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*message</td><td>We are getting the message added by user from this parameter</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Functions prototypes are declared in this header file.</p>
+<dl class="section author"><dt>Author</dt><dd>Nikola Petrovic </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*message</td><td>We are getting the message added by user from this parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This represent an empty string where we are going to put our encrypted message.</p>
+<p>Number of characters in a row. Row is given by number next to 'n'.</p>
+<p>Arrays of characters which are located in a given row.</p>
+<p>Getting a length of message.</p>
+<p>Shows the position of letter 'a' in encrypted message.</p>
+<p>Pointers to given arrays and strings.</p>
+<p>Calculate the distance between 'a' and letter for encryption that is introduced by user.</p>
+<p>Starting from the first character of message.</p>
 <p>Encryption with first row</p>
+<p>Starting from the first character of the first row.</p>
+<p><b>Creating a circular moving for first row</b></p>
+<p>If position of a character is greater than the number of characters in a row, position of a that character is calculated with this formula.</p>
+<p>In position of character of a given message insert encrypted character.</p>
+<p>If position of a character is not greater than the number of characters in a row, inserting of encrypted character is proceed like this.</p>
 <p>Encryption with second row</p>
-<p>Encryption with third row </p>
+<p>Starting from the first character of the second row.</p>
+<p><b>Creating a circular moving for second row</b></p>
+<p>If position of a character is greater than the number of characters in a row, position of a that character is calculated with this formula.</p>
+<p>In position of character of a given message insert encrypted character.</p>
+<p>If position of a character is not greater than the number of characters in a row, inserting of encrypted character is proceed like this.</p>
+<p>Encryption with third row</p>
+<p>Starting from the first character of the third row.</p>
+<p><b>Creating a circular moving for third row</b></p>
+<p>If position of a character is greater than the number of characters in a row, position of a that character is calculated with this formula.</p>
+<p>In position of character of a given message insert encrypted character.</p>
+<p>If position of a character is not greater than the number of characters in a row, inserting of encrypted character is proceed like this.</p>
+<p>If character is not found in any of given rows, just insert a character from a given message. </p>
 
 </div>
 </div>

@@ -13,8 +13,9 @@
 
 int main()
 {
-    /// In this variable we are storing the messages added by user
+    /// In this variable we are storing the messages added by user.
     char message[100];
+    /// Variable for choice.
     int choice;
 
     printf("If you want to encrypt message, press 1.\nIf you want to decrypt message, press 2.\n");
@@ -28,14 +29,14 @@ int main()
         getchar();
         switch(choice){
             case 1:
-                /// In this case we encrypt the message given by user
+                /// In this case we encrypt the message given by user.
                 printf("\n====Enter message for encryption====\n");
                 printf("\nNOTE: First letter must be 'a', than comes white space\nand than you enter your message\n\nMESSAGE: ");
                 gets(message);
                 encryption(&message[0]);
                 break;
             case 2:
-                /// In this case we decrypt the message given by user
+                /// In this case we decrypt the message given by user.
                 printf("\n====Enter message for decryption====\n\nMESSAGE: ");
                 gets(message);
                 decryption(&message[0]);

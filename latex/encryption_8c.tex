@@ -7,7 +7,7 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{encryption_8c_a7536b12e4a35cfe7d847473fa62efffe}{encryption}} (char $\ast$message)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function encrypt the message given by user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -17,8 +17,70 @@ void \mbox{\hyperlink{encryption_8c_a7536b12e4a35cfe7d847473fa62efffe}{encryptio
 \subsubsection{\texorpdfstring{encryption()}{encryption()}}
 {\footnotesize\ttfamily void encryption (\begin{DoxyParamCaption}\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
 
+
+
+This function encrypt the message given by user. 
+
+Functions prototypes are declared in this header file.
+
+\begin{DoxyAuthor}{Author}
+Nikola Petrovic 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$message} & We are getting the message added by user from this parameter \\
+\hline
+\end{DoxyParams}
+This represent an empty string where we are going to put our encrypted message.
+
+Number of characters in a row. Row is given by number next to \textquotesingle{}n\textquotesingle{}.
+
+Arrays of characters which are located in a given row.
+
+Getting a length of message.
+
+Shows the position of letter \textquotesingle{}a\textquotesingle{} in encrypted message.
+
+Pointers to given arrays and strings.
+
+Calculate the distance between \textquotesingle{}a\textquotesingle{} and letter for encryption that is introduced by user.
+
+Starting from the first character of message.
+
 Encryption with first row
+
+Starting from the first character of the first row.
+
+{\bfseries Creating a circular moving for first row}
+
+If position of a character is greater than the number of characters in a row, position of a that character is calculated with this formula.
+
+In position of character of a given message insert encrypted character.
+
+If position of a character is not greater than the number of characters in a row, inserting of encrypted character is proceed like this.
 
 Encryption with second row
 
-Encryption with third row 
+Starting from the first character of the second row.
+
+{\bfseries Creating a circular moving for second row}
+
+If position of a character is greater than the number of characters in a row, position of a that character is calculated with this formula.
+
+In position of character of a given message insert encrypted character.
+
+If position of a character is not greater than the number of characters in a row, inserting of encrypted character is proceed like this.
+
+Encryption with third row
+
+Starting from the first character of the third row.
+
+{\bfseries Creating a circular moving for third row}
+
+If position of a character is greater than the number of characters in a row, position of a that character is calculated with this formula.
+
+In position of character of a given message insert encrypted character.
+
+If position of a character is not greater than the number of characters in a row, inserting of encrypted character is proceed like this.
+
+If character is not found in any of given rows, just insert a character from a given message. 

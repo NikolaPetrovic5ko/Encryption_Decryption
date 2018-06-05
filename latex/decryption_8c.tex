@@ -7,7 +7,7 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{decryption_8c_a88893bd527477a4bbb05d7fab5c84c37}{decryption}} (char $\ast$message)
-\begin{DoxyCompactList}\small\item\em This funtion encrypt the message given by user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function decrypt the message given by user. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -19,7 +19,7 @@ void \mbox{\hyperlink{decryption_8c_a88893bd527477a4bbb05d7fab5c84c37}{decryptio
 
 
 
-This funtion encrypt the message given by user. 
+This function decrypt the message given by user. 
 
 \begin{DoxyAuthor}{Author}
 Nikola Petrovic 
@@ -29,10 +29,58 @@ Nikola Petrovic
 {\em $\ast$message} & We are getting the message added by user from this parameter \\
 \hline
 \end{DoxyParams}
+This represent an empty string where we are going to put our decrypted message.
+
+Number of characters in a row. Row is given by number next to \textquotesingle{}n\textquotesingle{}.
+
+Arrays of characters which are located in a given row.
+
+Getting a length of message.
+
+Shows the position of letter \textquotesingle{}a\textquotesingle{} in decrypted message.
+
+Pointers to given arrays and strings.
+
+Letter for decryption is a first letter of a given message.
+
+Calculate the distance between \textquotesingle{}a\textquotesingle{} and letter for decryption.
+
+Starting from the first character of message.
+
 Decryption with first row
 
-Napisi ovde nesto o ovom dole
+Starting from the first character of the first row.
+
+{\bfseries Creating a circular moving for first row}
+
+If position of a character is smaller than the number of characters in a row, position of a that character is calculated with this formula.
+
+In position of character of a given message insert decrypted character.
+
+If position of a character is not smaller than the number of characters in a row, inserting of decrypted character is proceed like this.
 
 Decryption with second row
 
-Decryption with third row 
+Starting from the first character of the second row.
+
+{\bfseries Creating a circular moving for second row}
+
+If position of a character is smaller than the number of characters in a row, position of a that character is calculated with this formula.
+
+In position of character of a given message insert decrypted character.
+
+If position of a character is not smaller than the number of characters in a row, inserting of decrypted character is proceed like this.
+
+Decryption with third row
+
+Starting from the first character of the third row.
+
+{\bfseries Creating a circular moving for third row}
+
+If position of a character is smaller than the number of characters in a row, position of a that character is calculated with this formula.
+
+In position of character of a given message insert decrypted character.
+
+If position of a character is not smaller than the number of characters in a row, inserting of decrypted character is proceed like this.
+
+If character is not found in any of given rows, just insert a character from a given message. 
